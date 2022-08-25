@@ -1,0 +1,26 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: service-order
+
+########################################### Spring cloud 自定义服务名称和 ip 地址###############################################
+eureka:
+  client: #将客户端注册到 eureka 服务列表内
+    service-url:
+      defaultZone: http://127.0.0.1:9761/eureka  #这个地址是 7001注册中心在 application.yml 中暴露出来额注册地址 （单机版）
+  instance:
+    instance-id: spring-cloud-order-9001 #自定义服务名称信息
+    prefer-ip-address: true  #显示访问路径的 ip 地址
+
+# 端点管理
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开启指 shutdown 端点
+        include: shutdown
+  # 开启 shutdown 实现优雅停服
+  endpoint:
+    shutdown:
+      enabled: true
