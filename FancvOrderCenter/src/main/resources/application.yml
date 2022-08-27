@@ -9,12 +9,16 @@ base:
       username: admin
       password: hta@123
 spring:
+  application:
+    name: service-order
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:15990
-  application:
-    name: service-order
+        username: "nacos"
+        password: "nacos"
+        service: ${spring.application.name}
+        namespace: 646f52b8-78a0-4e27-91df-c33c06979862
   main:
     allow-bean-definition-overriding: true
   datasource:
@@ -54,6 +58,7 @@ seata:
       password: "nacos"
       group:  DEFAULT_GROUP
       cluster: 1
+  use-jdk-proxy: true
 
 
 
@@ -67,4 +72,9 @@ management:
   # 开启 shutdown 实现优雅停服
   endpoint:
     shutdown:
+      enabled: true
+
+ribbon:
+  http:
+    client:
       enabled: true
