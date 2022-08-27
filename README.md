@@ -8,3 +8,13 @@ this is a springcloud  project demo
 
 Eureka 注册中心，order 服务注册到eureka 上
 
+
+## seata AT 模式
+
+已经运行seata AT 模式
+
+## 遗留问题
+
+seata 引入导致openClient 失效，项目总临时指定了url 才解决
+
+
