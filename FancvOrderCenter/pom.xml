@@ -49,34 +49,55 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-    <!--引入 Eureka Client 的依赖，将服务注册到 Eureka Server-->
-    <!-- Spring Boot 监控模块-->
+
+    <!-- 实现对 Spring MVC 的自动化配置 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+
+    <!-- 实现对数据库连接池的自动化配置 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
-      <version>2.7.0</version>
-      <scope>compile</scope>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+    <dependency> <!-- 本示例，我们使用 MySQL -->
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
-      <version>2.7.0</version>
-      <scope>compile</scope>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>1.1.10</version>
+    </dependency>
+
+    <!-- 实现对 MyBatis 的自动化配置 -->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>2.1.2</version>
+    </dependency>
+
+    <!-- 引入 Spring Cloud Alibaba Seata 相关依赖，使用 Seata 实现分布式事务，并实现对其的自动配置 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-alibaba-seata</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot</artifactId>
-      <version>2.7.0</version>
-      <scope>compile</scope>
+      <groupId>io.seata</groupId>
+      <artifactId>seata-spring-boot-starter</artifactId>
     </dependency>
+
+    <!-- 引入 Spring Cloud Alibaba Nacos Discovery 相关依赖，将 Nacos 作为注册中心，并实现对其的自动配置 -->
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-      <version>3.1.3</version>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fancv</groupId>
+      <artifactId>FancvCommons</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
